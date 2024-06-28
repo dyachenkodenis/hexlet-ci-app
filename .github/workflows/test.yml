@@ -1,0 +1,16 @@
+name: Hexlet CI App
+on: [push]
+jobs:
+  TestProject:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone
+        uses: actions/checkout@v4
+      - name: Setup      
+        run: make setup
+      - name: Start
+        run: make start
+      - name: Test
+        run: make test
+      - name: Lint
+        run: make lint
